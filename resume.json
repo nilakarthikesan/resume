@@ -78,10 +78,10 @@
     {
       "title": "Grasp Recovery under Delayed Feedback",
       "right": "Oct. 2026 - Present",
-      "subtitle": "Research design (in progress) | <a href='https://github.com/nilakarthikesan/grasp-recovery-under-delayed-feedback'><u>Repository</u></a>",
+      "subtitle": "MuJoCo simulation pilot | <a href='https://github.com/nilakarthikesan/grasp-recovery-under-delayed-feedback'><u>Repository</u></a>",
       "bullets": [
-        "Specified a matched-state evaluation protocol comparing continued motion, slower transport, grip adjustment, and return to support under independently varied observation age and response delay.",
-        "Defined hidden mass/friction holdouts and sensor-feedback controls to measure intervention value and test feedback dependence; implementation and results pending."
+        "Built a standalone MuJoCo grasp-transport-place task with bit-exact replay; collected 400 pilot episodes and 88,728 matched recovery branches under hidden mass/friction and independently varied observation age and response delay.",
+        "Evaluated recovery selectors on 94 held-out episodes with episode-clustered bootstrap intervals; latency-aware selection showed no completion advantage over its latency-agnostic baseline. Preliminary, simulation-only results."
       ]
     },
     {

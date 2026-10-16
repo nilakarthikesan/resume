@@ -70,7 +70,7 @@ def build():
     pdf = canvas.Canvas(str(output), pagesize=letter, invariant=1)
     pdf.setTitle(f'{data["name"]} - Resume')
     pdf.setAuthor(data["name"])
-    pdf.setSubject("Professional resume; research project protocol added October 2026")
+    pdf.setSubject("Professional resume; preliminary grasp-recovery simulation study")
     y = HEIGHT - TOP
 
     def paragraph(text, style="body", x=LEFT, width=CONTENT_WIDTH):
