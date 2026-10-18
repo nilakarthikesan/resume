@@ -19,8 +19,8 @@ ROOT = Path(__file__).resolve().parent
 WIDTH, HEIGHT = letter
 LEFT, RIGHT, TOP, BOTTOM = 36, 36, 32, 29
 CONTENT_WIDTH = WIDTH - LEFT - RIGHT
-BODY_SIZE = 9.0
-BODY_LEADING = 10.0
+BODY_SIZE = 9.7
+BODY_LEADING = 11.0
 
 
 def register_serif_fonts():
@@ -53,10 +53,10 @@ register_serif_fonts()
 STYLES = {
     "body": ParagraphStyle("body", fontName="Times-Roman", fontSize=BODY_SIZE,
                            leading=BODY_LEADING, textColor=colors.black),
-    "title": ParagraphStyle("title", fontName="Times-Bold", fontSize=9.5,
-                            leading=10.5),
-    "subtitle": ParagraphStyle("subtitle", fontName="Times-Italic", fontSize=9.0,
-                               leading=9.8),
+    "title": ParagraphStyle("title", fontName="Times-Bold", fontSize=10.2,
+                            leading=11.2),
+    "subtitle": ParagraphStyle("subtitle", fontName="Times-Italic", fontSize=9.3,
+                               leading=10.1),
     "name": ParagraphStyle("name", fontName="Times-Bold", fontSize=23,
                            leading=26, alignment=TA_CENTER),
     "contact": ParagraphStyle("contact", fontName="Times-Roman", fontSize=8.9,
@@ -70,7 +70,7 @@ def build():
     pdf = canvas.Canvas(str(output), pagesize=letter, invariant=1)
     pdf.setTitle(f'{data["name"]} - Resume')
     pdf.setAuthor(data["name"])
-    pdf.setSubject("Professional resume; preliminary grasp-recovery simulation study")
+    pdf.setSubject("AI safety and agent evaluation; engineering and empirical research experience")
     y = HEIGHT - TOP
 
     def paragraph(text, style="body", x=LEFT, width=CONTENT_WIDTH):
@@ -130,12 +130,18 @@ def build():
     ]
     paragraph(" | ".join(contacts), "contact")
     y -= 3
+    if data.get("summary"):
+        paragraph(escape(data["summary"]), x=LEFT + 10, width=CONTENT_WIDTH - 20)
+        y -= 2
 
-    for label, key in (("Education", "education"), ("Experience", "experience"),
-                       ("Projects", "projects")):
+    for label, key in (("Selected Research & Projects", "projects"),
+                       ("Professional Experience", "experience"), ("Education", "education")):
         section(label)
         for item in data[key]:
             entry(item, project=(key == "projects"))
+        if key == "projects" and data.get("research_note"):
+            paragraph(escape(data["research_note"]), x=LEFT + 10, width=CONTENT_WIDTH - 20)
+            y -= 2
 
     section("Technical Skills")
     for line in data["skills"]:

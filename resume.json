@@ -2,31 +2,41 @@
   "name": "Nila Karthikesan",
   "phone": "240-408-2114",
   "contact": [
-    {"label": "nilakarthikesan@gmail.com", "url": "mailto:nilakarthikesan@gmail.com"},
-    {"label": "LinkedIn", "url": "https://www.linkedin.com/in/nila-karthikesan/"},
-    {"label": "GitHub", "url": "https://github.com/nilakarthikesan"},
-    {"label": "Portfolio", "url": "http://nilakarthikesan.com"},
-    {"label": "Research", "url": "https://infinitepatterns.org"}
+    {
+      "label": "nilakarthikesan@gmail.com",
+      "url": "mailto:nilakarthikesan@gmail.com"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/nila-karthikesan/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/nilakarthikesan"
+    },
+    {
+      "label": "Portfolio",
+      "url": "http://nilakarthikesan.com"
+    },
+    {
+      "label": "Research",
+      "url": "https://infinitepatterns.org"
+    }
   ],
   "education": [
-    {
-      "title": "University of Maryland, College Park",
-      "right": "College Park, MD",
-      "subtitle": "B.S. in Computer Science, B.A. in Public Policy, and Minor in Engineering Technology",
-      "dates": "Aug. 2020 - May 2024",
-      "bullets": [
-        "<b>Director of Engineering, Society of Women Engineers:</b> Led technical workshops creating 50+ projects with JS, React, Node, REST APIs, and cloud-native backends."
-      ]
-    },
     {
       "title": "Georgia Institute of Technology",
       "right": "Online",
       "subtitle": "M.S. in Computer Science (Specialization: Artificial Intelligence)",
       "dates": "Aug. 2025 - Present",
-      "bullets": [
-        "Contributed interactive Three.js visualization and data loading to <a href='https://github.com/borglab/gtsfm'><u>GTSfM</u></a> for hierarchical 3D reconstructions.",
-        "Coauthored \"Hierarchical Structure-from-Motion Scales FeedForward Reconstruction,\" presented at the ECCV 2026 SfM-DL workshop."
-      ]
+      "bullets": []
+    },
+    {
+      "title": "University of Maryland, College Park",
+      "right": "College Park, MD",
+      "subtitle": "B.S. in Computer Science, B.A. in Public Policy, and Minor in Engineering Technology",
+      "dates": "Aug. 2020 - May 2024",
+      "bullets": []
     }
   ],
   "experience": [
@@ -36,9 +46,8 @@
       "subtitle": "Pinterest",
       "dates": "New York, NY",
       "bullets": [
-        "Building internal cloud governance and automation for the <b>Security Platform (PlatSec)</b> org, managing and securing <b>thousands of GCP projects and AWS resources</b> via <b>Terraform IaC</b>.",
-        "Designed an <b>S3-backed Terraform remote state</b> and workspace strategy with label-to-tfvars and declarative import automation, enabling safe migration of existing projects with <b>no-op plans</b> and no destructive drift.",
-        "Implementing centralized org audit logging (GCP log sinks -&gt; <b>Pub/Sub -&gt; Cloud Function -&gt; S3 -&gt; Gravwell</b>) for low-latency, scalable security analytics across distributed systems."
+        "Build Terraform automation and cloud governance across <b>thousands of GCP projects and AWS resources</b> in the Security Platform organization.",
+        "Designed remote-state and no-op migration workflows; implement centralized audit logging across GCP, Pub/Sub, Cloud Functions, S3 and Gravwell for security analytics."
       ]
     },
     {
@@ -47,9 +56,7 @@
       "subtitle": "Geico",
       "dates": "New York, NY",
       "bullets": [
-        "Led development of a <b>full-stack internal platform</b> managing GEICO's server inventory, exposing <b>100,000+ server records</b> via a <b>React UI</b> and <b>GraphQL API</b> to <b>500+ engineers</b>.",
-        "Reduced server query by <b>40%</b> through improved data modeling, caching, API design across PostgreSQL, GraphQL resolvers.",
-        "Migrated reporting workflows from <b>Power BI to PostgreSQL/Python</b>, cutting data processing time by <b>50%</b> and improving reliability of infra telemetry pipelines."
+        "Built a React/GraphQL inventory platform exposing <b>100,000+ server records to 500+ engineers</b>; reduced query latency <b>40%</b> and reporting-processing time <b>50%</b> using PostgreSQL and Python."
       ]
     },
     {
@@ -58,8 +65,7 @@
       "subtitle": "Palantir Technologies",
       "dates": "New York, NY",
       "bullets": [
-        "Developed a backend for a proxy service handling <b>10,000+ IPs</b> &amp; <b>100+ monthly users</b> on an AI platform, focusing on reliable APIs and observability in production.",
-        "Improved project load time by <b>80%</b> (minutes -&gt; seconds) by containerizing services with <b>Docker &amp; Kubernetes</b> and optimizing I/O paths."
+        "Developed backend proxy-service APIs and improved deployment workflows through Docker, Kubernetes and I/O optimization."
       ]
     },
     {
@@ -68,47 +74,52 @@
       "subtitle": "Comcast",
       "dates": "Washington, DC",
       "bullets": [
-        "Built a <b>full-stack content moderation platform</b> using <b>React.js, Flask, and OpenAI's CLIP</b>, integrating ML models in production to classify and flag unsafe media across creator content.",
-        "Implemented containerized microservices with <b>Docker &amp; Kubernetes on AWS</b>, improving horizontal scalability by <b>40%</b> and supporting concurrent moderation workloads.",
-        "Integrated <b>Elasticsearch</b> to power low-latency search and review of flagged items, achieving an <b>8x reduction in retrieval time</b> and boosting moderator efficiency."
+        "Built a CLIP-based media-moderation platform with React, Flask, Elasticsearch, Docker and Kubernetes on AWS; improved flagged-content retrieval speed <b>8x</b>."
       ]
     }
   ],
   "projects": [
     {
+      "title": "SafeLattice: LLM Agent Safety Evaluation",
+      "right": "2026",
+      "subtitle": "Georgia Tech CS 8903 | Advisor: Prof. Vijay Madisetti | <a href='https://github.com/nilakarthikesan/claw-eval-safelattice'><u>Code &amp; analysis</u></a>",
+      "bullets": [
+        "Implemented a Python extension to upstream Claw-Eval with severity-aware, Bell-LaPadula-inspired scoring and credential-leakage checks; audited all <b>300 task graders</b> and added regression tests.",
+        "Analyzed <b>1,222 agent traces across six LLMs</b> with mechanical label checks and bootstrap intervals; measured violation-detection F1 <b>0.81 vs. 0.11</b> for the binary baseline in this study."
+      ]
+    },
+    {
+      "title": "Never Trust the Context: Decision Integrity for Agents",
+      "right": "2026 - Present",
+      "subtitle": "Policy and evaluation prototype | <a href='https://github.com/nilakarthikesan/never-trust-the-context'><u>Repository</u></a>",
+      "bullets": [
+        "Built context-admission and attribution controls separating confidentiality from evidence integrity; extended evaluation to wrong decisions that do not visibly repeat untrusted content.",
+        "Implemented <b>10 clean/perturbed scenario pairs</b>, a structured scorer for decision corruption, grounding and required-claim coverage, and regression tests. Live-model evaluation remains pending."
+      ]
+    },
+    {
       "title": "Grasp Recovery under Delayed Feedback",
-      "right": "Oct. 2026 - Present",
-      "subtitle": "MuJoCo simulation pilot | <a href='https://github.com/nilakarthikesan/grasp-recovery-under-delayed-feedback'><u>Repository</u></a>",
+      "right": "2026 - Present",
+      "subtitle": "MuJoCo simulation pilot | <a href='https://github.com/nilakarthikesan/grasp-recovery-under-delayed-feedback'><u>Repository &amp; data</u></a>",
       "bullets": [
-        "Built a standalone MuJoCo grasp-transport-place task with bit-exact replay; collected 400 pilot episodes and 88,728 matched recovery branches under hidden mass/friction and independently varied observation age and response delay.",
-        "Evaluated recovery selectors on 94 held-out episodes with episode-clustered bootstrap intervals; latency-aware selection showed no completion advantage over its latency-agnostic baseline. Preliminary, simulation-only results."
+        "Built a grasp-transport-place task with bit-exact replay; collected <b>400 pilot episodes</b> and <b>88,728 matched recovery branches</b> under hidden mass/friction and varied observation age and response delay.",
+        "Evaluated selectors on <b>94 held-out episodes</b> with episode-clustered bootstrap intervals; latency-aware selection showed no completion advantage over its latency-agnostic baseline. Preliminary, simulation-only."
       ]
     },
     {
-      "title": "CLIP-Based Content Moderation System",
-      "inline_subtitle": true,
-      "right": "2024",
-      "subtitle": "Python, FastAPI, Supabase, OpenAI CLIP, Docker, React",
+      "title": "GTSfM: Hierarchical 3D Reconstruction Visualization",
+      "right": "2025 - Present",
+      "subtitle": "Georgia Tech | Prof. Frank Dellaert | <a href='https://github.com/nilakarthikesan/visualization-gtsfm-paper'><u>Visualization</u></a>",
       "bullets": [
-        "Developed a full-stack ML system analyzing video/image embeddings with <b>OpenAI's CLIP</b> to detect unsafe content, using <b>FastAPI, Supabase/Postgres, and Dockerized microservices</b> for scalable moderation pipelines.",
-        "Built cosine-similarity-based embedding search and React dashboard for reviewers, enabling real-time classification, flagging, and explainable model-inference UX."
-      ]
-    },
-    {
-      "title": "Search Engine Optimization Evaluation Agent",
-      "inline_subtitle": true,
-      "right": "2025",
-      "subtitle": "Python, LangChain, OpenAI, Supabase, Streamlit",
-      "bullets": [
-        "Created an <b>LLM-based evaluation agent</b> using LangChain to generate and rank responses from <b>ChatGPT/Claude/Perplexity</b>, storing structured metrics in <b>Supabase</b> for analysis and iteration.",
-        "Designed a <b>Streamlit dashboard</b> to visualize rankings and quality scores, showcasing agentic orchestration similar to search/recommendation model tuning workflows."
+        "Built interactive Three.js visualization and data loading for hierarchical reconstruction; coauthored <i>Hierarchical Structure-from-Motion Scales FeedForward Reconstruction</i>, presented at the <b>ECCV 2026 SfM-DL workshop</b>."
       ]
     }
   ],
   "skills": [
-    "<b>Languages:</b> Python, Java, Go, C/C++, SQL (Postgres), JavaScript, Rust, R, HTML/CSS",
-    "<b>Frameworks:</b> React, Node.js, Flask, FastAPI, GraphQL, Temporal, JUnit",
-    "<b>Cloud &amp; Infra:</b> AWS (EC2, S3, RDS, Lambda), GCP (Logging, Pub/Sub, Cloud Functions), Terraform, Docker, Kubernetes, Git",
-    "<b>Libraries:</b> Pandas, NumPy, Matplotlib, SciPy"
-  ]
+    "<b>Languages:</b> Python, C/C++, Java, Go, SQL, JavaScript, Rust",
+    "<b>ML &amp; Evaluation:</b> PyTorch, NumPy, Pandas, SciPy, CLIP, MuJoCo; agent evaluation, information flow, bootstrap analysis",
+    "<b>Systems:</b> AWS, GCP, Terraform, Docker, Kubernetes, PostgreSQL, GraphQL, FastAPI, React, Three.js"
+  ],
+  "summary": "Software engineer and Georgia Tech M.S. student focused on LLM agent evaluation, information-flow controls, and reproducible experiments in simulated robotics.",
+  "research_note": "Additional prototypes (in progress): synthetic evaluations of annotation disagreement, temporal shift, and narrative framing; no real-model or human-subject results yet."
 }
